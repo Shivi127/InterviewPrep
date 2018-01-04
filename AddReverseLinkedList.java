@@ -35,6 +35,7 @@ class AddReverseLinkedList {
           tempNode.setnext()=null;
           curr.setnext()=tempNode;
           curr=tempNode;
+          temprem=0;
           head1=head1.getnext();
           head2=head2.getnext();
         }//ending the while loop
@@ -46,6 +47,7 @@ class AddReverseLinkedList {
           tempNode.setnext()=null;
           curr.setnext()=tempNode;
           curr=tempNode;
+          temprem=0;
           head1=head1.getnext();
         }
         while(head2!=null){
@@ -55,6 +57,7 @@ class AddReverseLinkedList {
           tempNode.setnext()=null;
           curr.setnext()=tempNode;
           curr=tempNode;
+          temprem=0;
           head2=head2.getnext();
         }
         if (temprem!=0)
