@@ -18,7 +18,7 @@ class AddReverseLinkedList {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode *head1=l1;// creating pointers to head of the two list 
         ListNode *head2=l2;
-        ListNode addList= new ListNode();
+        ListNode addList= new ListNode(0);
         ListNode *curr=addList;
         int temprem=0;
         int tempsum=0;
@@ -26,7 +26,7 @@ class AddReverseLinkedList {
           //while there are more nodes we add the values.
           tempsum= head1.getval()+head2.getval()+temprem;
           //have to check if the number is greater than 9
-          if(temp >9){
+          if(tempsum >9){
             temprem= temp/10;
             tempsum= temp%10;
           }
@@ -35,7 +35,6 @@ class AddReverseLinkedList {
           tempNode.setnext()=null;
           curr.setnext()=tempNode;
           curr=tempNode;
-          tempsum=0;
           head1=head1.getnext();
           head2=head2.getnext();
         }//ending the while loop
@@ -45,7 +44,6 @@ class AddReverseLinkedList {
           tempsum=head1.getval()+temprem;
           ListNode tempNode= new ListNode(tempsum);
           tempNode.setnext()=null;
-          tempsum=0;
           curr.setnext()=tempNode;
           curr=tempNode;
           head1=head1.getnext();
@@ -55,7 +53,6 @@ class AddReverseLinkedList {
           tempsum=head2.getval()+temprem;
           ListNode tempNode= new ListNode(tempsum);
           tempNode.setnext()=null;
-          tempsum=0;
           curr.setnext()=tempNode;
           curr=tempNode;
           head2=head2.getnext();
@@ -68,6 +65,7 @@ class AddReverseLinkedList {
           curr.setnext()=tempNode;
           curr=tempNode;
         }
-        return addList;
+//        removing the decoy node
+        return addList.getNext();
     }
 }
