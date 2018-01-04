@@ -22,7 +22,7 @@ class AddReverseLinkedList {
         ListNode *curr=addList;
         int temprem=0;
         int tempsum=0;
-        while (head1.getnext()!=null&&head2.getnext()!=null){
+        while (head1!=null&&head2!=null){
           //while there are more nodes we add the values.
           tempsum= head1.getval()+head2.getval()+temprem;
           //have to check if the number is greater than 9
