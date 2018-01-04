@@ -43,6 +43,10 @@ class AddReverseLinkedList {
         while(head1!=null){
           //we still have elements
           tempsum=head1.getval()+temprem;
+          if(tempsum >9){
+            temprem= temp/10;
+            tempsum= temp%10;
+          }
           ListNode tempNode= new ListNode(tempsum);
           tempNode.setnext()=null;
           curr.setnext()=tempNode;
@@ -53,6 +57,10 @@ class AddReverseLinkedList {
         while(head2!=null){
           //we still have elements
           tempsum=head2.getval()+temprem;
+          if(tempsum >9){
+            temprem= temp/10;
+            tempsum= temp%10;
+          }
           ListNode tempNode= new ListNode(tempsum);
           tempNode.setnext()=null;
           curr.setnext()=tempNode;
@@ -63,7 +71,8 @@ class AddReverseLinkedList {
         if (temprem!=0)
         {
           //we still have a carry over left
-          ListNode tempNode= new ListNode(tempsum);
+          
+          ListNode tempNode= new ListNode(temprem);
           tempNode.setnext()=null;
           curr.setnext()=tempNode;
           curr=tempNode;
