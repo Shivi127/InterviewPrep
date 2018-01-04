@@ -39,7 +39,7 @@ class AddReverseLinkedList {
           head2=head2.getnext();
         }//ending the while loop
         
-        if(head1!=null){
+        while(head1!=null){
           //we still have elements
           tempsum=head1.getval()+temprem;
           ListNode tempNode= new ListNode(tempsum);
@@ -48,7 +48,7 @@ class AddReverseLinkedList {
           curr=tempNode;
           head1=head1.getnext();
         }
-        else if(head2!=null){
+        while(head2!=null){
           //we still have elements
           tempsum=head2.getval()+temprem;
           ListNode tempNode= new ListNode(tempsum);
