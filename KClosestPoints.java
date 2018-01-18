@@ -22,7 +22,8 @@ public class KClosestPoints {
 		double dis=0.0;
 		TreeMap<Double, Point> m= new TreeMap<Double, Point>();
 		for(Point p: points) {
-			dis= Math.sqrt((p.x)^2 + (p.y)^2);
+			dis= Math.sqrt((p.x)*(p.x) + (p.y)*(p.y));
+			System.out.println(dis);
 			m.put(dis, p);
 		}
 		
@@ -40,14 +41,14 @@ public class KClosestPoints {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Point[] p= new Point[9];
+		Point[] p= new Point[10];
 		for(int i=0;i<=5;i++) {
 			p[i]=new Point(1,i);
 		}
 		p[6]=new Point(-1,8);
-//		p[7]=new Point(-6,-8);
-		p[7]=new Point(0,0);
-		p[8]=new Point(1,-2);
+		p[7]=new Point(6,-8); //this is giving a nan overflow?
+		p[8]=new Point(0,0);
+		p[9]=new Point(1,-2);
 		
 		closest(p,4);
 	}
